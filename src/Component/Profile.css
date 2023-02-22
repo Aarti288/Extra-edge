@@ -1,0 +1,58 @@
+.card-container{
+    display:grid;
+    width:280px;
+    
+}
+.main-container{
+   margin:3rem 0px 0rem 2rem;
+    display: grid;
+    gap:15rem 0rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 100px);
+}
+.avtar-img{
+    width:150px;
+    height:150px;
+   
+}
+.image-container{
+    width:280px;
+     background-color:#f5f5f5;
+     display:flex;
+     justify-content: center;
+}
+.buttons{
+    background-color:#f5f5f5 ;
+    display:flex;
+   justify-content:space-around;
+   border:none;
+}
+
+.like-btn{
+    border:none;
+}
+.heart{
+    font-size: 25px;
+    color:rgb(182, 173, 173);
+    margin-top: 7px;
+     width: 50px;
+     border:none;
+     outline:none;
+     text-transform: uppercase;
+     cursor: pointer;
+     font-weight: bold;
+    
+ }
+ .edit-btn{
+    width: 50px;
+    cursor:pointer;
+    border:none;
+ }
+ .delete-btn{
+    width: 50px;
+    cursor:pointer;
+    border:none;
+ }
+ .active{
+    color: rgb(192, 39, 39);  
+ }
