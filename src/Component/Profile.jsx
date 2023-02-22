@@ -20,7 +20,7 @@ const ProfileData=()=>{
 
   const deleteData=async()=>{
     console.log("deleting");
-    await axios.delete(`https://jsonplaceholder.typicode.com/users/1`);
+    await axios.delete(`https://jsonplaceholder.typicode.com/users/${props.id}`);
   }
     const changeColor = (e) =>{
       setId(e);

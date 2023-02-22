@@ -11,7 +11,7 @@ function EditData(props
   let [email, setEmail] = useState(" ");
   let [website, setWebsite] = useState(" ");
   let [phone, setPhone] = useState(" ");
-  const [displayTransactionModal, setTransactionModal] = useState(false);
+  const [displayModal, setDisplayModal] = useState(false);
   
  
 const handleChange=(e)=>{
@@ -34,11 +34,11 @@ const handleChange=(e)=>{
      
 }
 
-  function transctionModalToggle() {
-    if (displayTransactionModal) {
-      setTransactionModal(false);
+  function ModalToggle() {
+    if (displayModal) {
+      setDisplayModal(false);
     } else {
-      setTransactionModal(true);
+      setDisplayModal(true);
     }
   }
   useEffect(()=>{
@@ -48,17 +48,17 @@ const handleChange=(e)=>{
        setPhone(props.phone)
   },[]);
   const onSubmit=async(e)=>{
-    if (displayTransactionModal) {
-      setTransactionModal(false);
+    if (displayModal) {
+      setDisplayModal(false);
     } else {
-      setTransactionModal(true);
+      setDisplayModal(true);
     }
       e.preventDefault();
 
-      // console.log("hhhhh",props.id)
+     
       await axios.put(`https://jsonplaceholder.typicode.com/users/${props.id}`,
       {
-         name:"Ashwini"
+         name:"Aarti"
         })
       .then(function (response){console.log(response)})
     
@@ -70,7 +70,7 @@ const handleChange=(e)=>{
       ) : (
         <div className="portfolio-container">
             <span className="view-portfolio">Edit Card Data</span>
-            <span className="view-portfolio"><img onClick={transctionModalToggle}className="crossImg" src={ crossImg }/></span>
+            <span className="view-portfolio"><img onClick={ModalToggle}className="crossImg" src={ crossImg }/></span>
           <div className="view-portfolio-modal">
               <div className="portfolio-heading-img">
 
@@ -97,7 +97,7 @@ const handleChange=(e)=>{
               
               </div>
               <div className="action-btn">
-              <button className="cancel-btn" onClick={transctionModalToggle}>Cancel</button>
+              <button className="cancel-btn" onClick={ModalToggle}>Cancel</button>
               <button className="ok-btn" onClick={e=>onSubmit(e)}>OK</button>
               </div>
           </div>
