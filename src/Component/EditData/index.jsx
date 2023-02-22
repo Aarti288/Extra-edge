@@ -65,7 +65,7 @@ const handleChange=(e)=>{
   }
   return (
     <>
-      {displayTransactionModal ? (
+      {displayModal ? (
         ""
       ) : (
         <div className="portfolio-container">
