@@ -19,7 +19,8 @@ const ProfileData=()=>{
   const [id,setId]=useState([]);
 
   const deleteData=async()=>{
-    console.log("deleting");
+   console.log("deleting");
+   
     await axios.delete(`https://jsonplaceholder.typicode.com/users/${props.id}`);
   }
     const changeColor = (e) =>{
