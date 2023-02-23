@@ -8,7 +8,7 @@ import axios from "axios";
 
 const ProfileData=()=>{
     const [toggle, setToggle] = useState(false);
-    const [userid,setuserId]=useState();
+    const [userid,setuserId]=useState(1);
     let [name, setName] = useState(" ");
   let [username, setUsername] = useState(" ");
   let [email, setEmail] = useState(" ");
@@ -18,10 +18,17 @@ const ProfileData=()=>{
     const  [toggleHeart, setToggleHeart] = useState(false);
   const [id,setId]=useState([]);
 
-  const deleteData=async()=>{
-   console.log("deleting");
-   
-    await axios.delete(`https://jsonplaceholder.typicode.com/users/${props.id}`);
+  function deleteData(id)
+  {
+  function removeObjectWithId(users, id)
+   {
+  const objWithIdIndex = users.findIndex((obj) => obj.id === id);
+  users.splice(objWithIdIndex, 1);
+  return users;
+  }
+  const newArr = removeObjectWithId(users, id);
+  console.log(newArr);
+
   }
     const changeColor = (e) =>{
       setId(e);
@@ -38,8 +45,9 @@ const ProfileData=()=>{
        
     },[]);
     function displayModal({id,name,email,phone,website}) {
-      console.log("profile",name);
+     
         setuserId(id);
+       
         setName(name);
         setEmail(email);
         setUsername(username);
@@ -68,7 +76,7 @@ id==ele.id? 'heart active' : 'heart'
 } onClick={()=>changeColor(ele.id)} /></span>
    <span className="edit-btn" key={key} onClick={() => displayModal(ele)}>Edit</span> 
    
-    <span onClick={deleteData} className="delete-btn">Delete</span>
+    <span onClick={()=>deleteData(ele.id)} className="delete-btn">Delete</span>
 </div>
 
 </div>
