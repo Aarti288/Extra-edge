@@ -20,14 +20,15 @@ const ProfileData=()=>{
 
   function deleteData(id)
   {
-  function removeObjectWithId(users, id)
-   {
-  const objWithIdIndex = users.findIndex((obj) => obj.id === id);
-  users.splice(objWithIdIndex, 1);
-  return users;
-  }
-  const newArr = removeObjectWithId(users, id);
-  console.log(newArr);
+    function removeObjectWithId(users, id)
+    {
+      const objWithIdIndex = users.findIndex((obj) => obj.id === id);
+      users.splice(objWithIdIndex, 1);
+      return users;
+     }
+      const newArr = removeObjectWithId(users, id);
+      console.log(newArr);
+     
 
   }
     const changeColor = (e) =>{
