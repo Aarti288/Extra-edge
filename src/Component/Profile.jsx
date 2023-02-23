@@ -4,7 +4,7 @@ import {RiHeart3Fill} from 'react-icons/ri';
 
 import { useState,useEffect } from "react";
 import EditData from "./EditData";
-import axios from "axios";
+
 
 const ProfileData=()=>{
     const [toggle, setToggle] = useState(false);
@@ -55,9 +55,12 @@ const ProfileData=()=>{
         setPhone(phone);
         setWebsite(website);
         {
-          if (!toggle) {
-            setToggle(true);
+          if (toggle) {
+            setToggle(false);
           } 
+          else{
+            setToggle(true);
+          }
         }
       }
     
